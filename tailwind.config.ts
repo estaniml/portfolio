@@ -13,8 +13,22 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        sans: ['var(--font-geist-sans)'],
+        mono: ['var(--font-geist-mono)'],
+      },
+      screens: {
+        '3xl': '1700px',
+      },
+      height: {
+        18: "72px",
+        125: "420px",
+        150: "500px",
+        200: "700px",
+      },
     },
   },
   plugins: [],
+  darkMode: 'class',
 }
 export default config
