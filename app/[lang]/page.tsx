@@ -4,10 +4,17 @@ import { Project } from '@/lib/interface'
 import { ChevronRight, Mail, FileDown } from 'lucide-react'
 import ProjectCard from '@/components/project-card'
 import { getData } from '@/lib/utils'
+import { Locale } from '@/i18n.config'
+import { getDictionary } from '@/lib/dictionary'
 
 
+export default async function Home({
+  params
+}: {
+  params: { lang: Locale }
+}) {
 
-export default async function Home() {
+  const { navigation } = await getDictionary(params.lang)
 
   const data = await getData() as Project[]
   
@@ -18,8 +25,8 @@ export default async function Home() {
 
       <h1 className='text-5xl font-black'>Estanislao Martinez Lacabe</h1>
       <h3 className='mt-4 text-xl'>I&apos;m <b>Full Stack Developer</b> from Argentina.</h3>
-      <p className='mt-8 text-lg font-light dark:text-stone-200'>I studied 4 years Architecture and Design, and then, I change it for Business Administration and Programming, where I found what <b>passion</b> means.</p>
-      <a href='' className='mt-2 w-full flex justify-center items-center gap-2 hover:underline transition-all'><FileDown size={20} /> Download CV  </a>
+      <p className='mt-8 text-lg font-light dark:text-stone-200'>After 4 years studying Architecture and Design, I decided to change my way and I&apos;m proud it. I found the <b>passion</b> in Business Administration and Programming and thats what I enjoy for living right now.</p>
+      <a href='' className='mt-4 w-full flex justify-center items-center gap-2 hover:underline transition-all'><FileDown size={20} /> Download CV  </a>
       <div className='z-10 mt-8 relative w-full h-150 rounded-xl overflow-hidden shadow border border-stone-300'>
         <Image 
           src={'/me.jpg'}
@@ -62,7 +69,7 @@ export default async function Home() {
           ))}
         </div>
 
-        <Link className='mt-8 w-full flex justify-center items-center gap-1 hover:gap-2 transition-all' href='/projects'>See More <ChevronRight size={16} /> </Link>
+        <Link className='mt-8 w-full flex justify-center items-center gap-1 hover:gap-2 transition-all' href='/projects/all'>See More <ChevronRight size={16} /> </Link>
       </div>
 
       <div className='mt-16 pt-8'>
@@ -70,12 +77,12 @@ export default async function Home() {
 
         <div className='grid grid-cols-2'>
           <div className='w-[90%]'>
-            <h3 className='text-xl font-bold text-stone-600 dark:text-stone-400'>Got a question or proposal. Go a head →</h3>
+            <h3 className='text-xl font- text-stone-600 dark:text-stone-400 font-light'>Got a question or proposal. Go a head →</h3>
             
           </div>
 
           <div className='grid grid-cols-2'>
-            <a href='https://wa.me/5493434653960' target='_blank' rel='noreferrer' className='flex justify-center items-center gap-2 bg-stone-900 text-white w-[90%] mx-auto rounded-lg border border-stone-800 hover:opacity-90 transition-all shadow font-medium'>
+            <a href='https://wa.me/5493434653960' target='_blank' rel='noreferrer' className='flex justify-center items-center gap-2 bg-stone-800 text-white w-[90%] mx-auto rounded-lg border border-stone-900 hover:opacity-90 transition-all shadow font-medium'>
               <Image src={'/whatsapp.svg'} alt='' width={22} height={22} />
               Whatsapp
             </a>

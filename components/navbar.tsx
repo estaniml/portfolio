@@ -3,27 +3,38 @@
 import Link from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import ModeSwitcher from './mode-switcher'
+import LocaleSwitcher from './locale-switcher'
 
-const navLinks = [
-    {
-        name: 'Home',
-        href: '/',
-        value: null
-    },
-    {
-        name: 'Projects',
-        href: '/projects/all',
-        value: 'projects'
-    },
-    // {
-    //     name: 'Contact',
-    //     href: '/contact'
-    // },
-]
-const Navbar = () => {
+
+
+interface Props {
+    content: {
+        home: string
+        about: string
+        contact: string
+        projects: string
+    }
+}
+const Navbar = ({ content } : Props) => {
 
     const segment = useSelectedLayoutSegment()
-    console.log(segment);
+    
+    const navLinks = [
+        {
+            name: content.home,
+            href: '/',
+            value: null
+        },
+        {
+            name: content.projects,
+            href: '/projects/all',
+            value: 'projects'
+        },
+        // {
+        //     name: 'Contact',
+        //     href: '/contact'
+        // },
+    ]
 
     return (
         <nav className="fixed top-0 left-0 z-50 w-full bg-white/80 dark:bg-stone-950/80 backdrop-blur-sm text-black dark:text-white h-12 px-2 md:px-[25%] flex items-center justify-between">
@@ -47,7 +58,10 @@ const Navbar = () => {
             <span className='w-px h-4 bg-black'></span>
             <Link href={'/es'}>ES</Link>
         </div> */}
-        <ModeSwitcher />
+        <div className='flex items-center gap-4'>
+            <ModeSwitcher />
+            <LocaleSwitcher />
+        </div>
     </nav>
   )
 }
