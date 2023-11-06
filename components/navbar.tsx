@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import ModeSwitcher from './mode-switcher'
 import LocaleSwitcher from './locale-switcher'
-
-
+import { Locale } from '@/i18n.config'
 
 interface Props {
+    lang: Locale
     content: {
         home: string
         about: string
@@ -15,7 +15,7 @@ interface Props {
         projects: string
     }
 }
-const Navbar = ({ content } : Props) => {
+const Navbar = ({ lang, content }: Props) => {
 
     const segment = useSelectedLayoutSegment()
     
@@ -46,20 +46,15 @@ const Navbar = ({ content } : Props) => {
         <div className='flex items-center gap-4 text-sm'>
             { navLinks.map( (navLink, index) => (
                 <Link 
-                    href={navLink.href}
+                    href={`/${lang}/${navLink.href}`}
                     key={index}
                     className={ segment === navLink.value ? 'font-bold border-b-[1px] border-emerald-300' : 'border-b border-transparent' }
                 >{navLink.name}</Link>
             ))}
         </div>
-
-        {/* <div className='flex items-center gap-2 text-xs'>
-            <Link href={'/en'}>EN</Link>
-            <span className='w-px h-4 bg-black'></span>
-            <Link href={'/es'}>ES</Link>
-        </div> */}
-        <div className='flex items-center gap-4'>
+        <div className='flex items-center gap-2'>
             <ModeSwitcher />
+            <span className='w-px h-4 bg-black dark:bg-white' />
             <LocaleSwitcher />
         </div>
     </nav>

@@ -46,7 +46,7 @@ export default function ProjectsLayout({
           <Link 
             href={`/projects/${filter.href}`} 
             key={ index } 
-            className={cn('text-sm font-bold text-gray-700 dark:text-gray-300 px-2 py-1 bg-stone-100 dark:bg-stone-900 rounded-lg hover:bg-stone-200 active:scale-95 dark:hover:bg-stone-800 transition-all',
+            className={cn('text-sm font-bold text-gray-700 dark:text-gray-300 px-2 py-1 bg-stone-100 dark:bg-stone-900 rounded-lg hover:bg-stone-200 active:scale-95 dark:hover:bg-stone-800 transition-all whitespace-nowrap',
               `/${params.slug}` === filter.href && 'bg-stone-800 dark:bg-stone-600 text-white hover:bg-stone-700 dark:hover:bg-stone-500'
             )}
           >

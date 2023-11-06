@@ -3,6 +3,21 @@
         "about": "About me",
         "home": "Home",
         "projects": "Projects",
-        "contact": "Contact"
+        "contact": "Contact",
+        "footer": "This portfolio built with Next 14, Typescript, Taiwlind and Sanity CMS."
+    },
+    "home": {
+        "subtitle": "I'm Full Stack Developer from Argentina.",
+        "description": "Full Stack web developer and student of Business Administration. With more than 1 year of experience my favorites tools are, in frontend, Next, Typescript and Tailwind, and in backend i just adapt myself.",
+        "downloadCV": "Download CV",
+        "mySkills": "My Skills.",
+        "recentProjects": "Recent Projects.",
+        "seeMore": "See More",
+        "contact": "Contact Me.",
+        "contactSubtitle": "Got a question or proposal. Go a Head →"
+    },
+    "projects": {
+        "title": "Projects.",
+        "notFound": "No projects found."
     }
 }

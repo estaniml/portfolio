@@ -31,9 +31,9 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`font-mono ${GeistSans.variable} ${GeistMono.variable} bg-white dark:bg-stone-950 text-black dark:text-white`}>
         <ThemeProvider>
-          <Navbar content={navigation} />
+          <Navbar lang={params.lang} content={navigation} />
           {children}
-          <Footer />
+          <Footer content={navigation} />
         </ThemeProvider>
       </body>
     </html>

@@ -1,15 +1,34 @@
+
+import imageUrlBuilder from '@sanity/image-url'
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { client } from '@/lib/sanity'
+import { StaticImageData } from 'next/image';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export async function getData() {
-  const query = `*[_type == "project"]`
+const builder = imageUrlBuilder(client)
 
-  const data = await client.fetch(query)
+export function urlFor(source : string | StaticImageData ) {
+  return builder.image(source)
+}
+
+export async function getData(slug: string | null ) {
+
+  if( slug ) {
+    const query = `*[_type == "project" && slug.current == $slug]`;
   
-  return data
+    const project = await client.fetch(query, { slug });
+  
+    return project;
+
+  } else {
+    const query = `*[_type == "project"]`
+
+    const data = await client.fetch(query)
+    
+    return data
+  }
 }

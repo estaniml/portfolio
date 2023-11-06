@@ -3,6 +3,21 @@
         "about": "Sobre mi",
         "home": "Inicio",
         "projects": "Proyectos",
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "footer": "Este portafolio está desarrollado con Next 14, Typescript, Tailwind y Sanity CMS."
+    },
+    "home": {
+        "subtitle": "Desarrollador web Full Stack.",
+        "description": "Soy un Fullstack Developer y estudiante de Lic. en Administración. Como programador web llevo más de un año, mis herramientas preferidas son Next, Typescript y Tailwind en el Frontend y para el Backend me adapto.",
+        "downloadCV": "Descargar CV",
+        "mySkills": "Mis Herramientas",
+        "recentProjects": "Proyectos Recientes",
+        "seeMore": "Ver Más",
+        "contact": "Contactame",
+        "contactSubtitle": "Tenes alguna duda o propuesta ? Soy todo oídos →"
+    },
+    "projects": {
+        "title": "Proyectos.",
+        "notFound": "No se encontraron proyectos."
     }
 }

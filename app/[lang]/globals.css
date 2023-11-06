@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .bg-lines {
+      @apply after:absolute after:left-0 after:top-0 after:h-full after:w-1/4 md:after:w-[189.6px] after:border-x after:-z-10 before:absolute before:border-stone-200 after:border-stone-200 dark:before:border-stone-900 dark:after:border-stone-800 before:right-0 before:top-0 before:h-full before:w-1/4 md:before:w-[189.6px] before:border-x before:-z-10
+    }
+  }
