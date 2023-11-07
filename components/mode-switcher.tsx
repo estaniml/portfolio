@@ -1,6 +1,6 @@
 'use client'
 import { cn } from '@/lib/utils'
-import { Moon, PcCase, Sun } from 'lucide-react'
+import { Laptop2, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
@@ -19,10 +19,10 @@ const ModeSwitcher = () => {
 
   return (
     <div className='flex items-center border-stone-700 dark:border-stone-300 w-6 h-6'>
-        {/* <button  
+        <button  
             onClick={() => setTheme("dark")} 
             className={cn('hover:bg-stone-200 dark:hover:bg-stone-800 rounded-lg p-1 active:scale-90 transition-all', theme === 'system' ? 'flex opacity-100' : 'hidden opacity-0')}
-        ><PcCase size={16} /></button> */}
+        ><Laptop2 size={16} /></button>
         <button 
             onClick={() => setTheme("dark")} 
             className={cn('hover:bg-stone-200 dark:hover:bg-stone-800 rounded-lg p-1 active:scale-90 transition-all', theme === 'light' ? 'flex opacity-100' : 'hidden opacity-0')}

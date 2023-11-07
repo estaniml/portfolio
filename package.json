@@ -12,6 +12,7 @@
     "@formatjs/intl-localematcher": "^0.4.2",
     "@portabletext/react": "^3.0.11",
     "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.19.1",
     "clsx": "^2.0.0",
     "geist": "^1.0.0",
     "lucide-react": "^0.292.0",

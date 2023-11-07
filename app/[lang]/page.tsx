@@ -27,7 +27,8 @@ export default async function Home({
       <h3 className='mt-4 text-xl'>{home.subtitle}</h3>
       <p className='mt-8 text-lg font-light dark:text-stone-200'>{home.description}</p>
       <a 
-        href=''
+        download='Estanislao Martinez Lacabe CV - Fullstack Developer'
+        href='estanislaoMartinezLacabe-CV.pdf'
         className='mt-4 w-full flex justify-center items-center gap-2 hover:underline transition-all'
       ><FileDown size={20} /> {home.downloadCV}  </a>
 

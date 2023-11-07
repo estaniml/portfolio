@@ -1,8 +1,5 @@
-import { createClient } from 'next-sanity'
-import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
 
-import { schemaTypes } from '@/portfolio/schemas'
+import { createClient } from 'next-sanity'
 
 const projectId = '0pc2ajy0'
 const dataset = 'production'
@@ -14,18 +11,3 @@ export const client = createClient({
     apiVersion,
     useCdn: true
 })
-
-export const config = defineConfig({
-    basePath: '/admin', 
-  
-    projectId,
-    dataset,
-    title: 'portfolio',
-    apiVersion,
-  
-    plugins: [deskTool()],
-  
-    schema: {
-      types: schemaTypes,
-    },
-  })

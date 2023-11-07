@@ -20,10 +20,12 @@ function getLocale(request: NextRequest): string | undefined {
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
+  
   const pathnameIsMissingLocale = i18n.locales.every(
     locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
-  )
-
+    )
+    
+    if(pathname === '/admin') return
   // Redirect if there is no locale
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request)
@@ -38,5 +40,5 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   // Matcher ignoring `/_next/` and `/api/`
-  matcher: ['/((?!api|_next/static|_next/image|images|favicon.ico|sitemap.ts|whatsapp.svg).*)']
+  matcher: ['/((?!api|_next/static|_next/image|images|favicon.ico|sitemap.ts|whatsapp.svg|estanislaoMartinezLacabe-CV.pdf).*)']
 }
