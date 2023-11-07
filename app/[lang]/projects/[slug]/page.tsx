@@ -4,6 +4,8 @@ import { getDictionary } from '@/lib/dictionary'
 import { Project } from '@/lib/interface'
 import { getData } from '@/lib/utils'
 import { AlertTriangle } from 'lucide-react'
+import { Suspense } from 'react'
+import Loading from './loading'
 
 const CategoryPage = async ( { params } : { params: { slug: string, lang: Locale}}) => {
   
@@ -14,9 +16,7 @@ const CategoryPage = async ( { params } : { params: { slug: string, lang: Locale
   const filteredList = params.slug === 'all' ? data : data.filter( project => project.tools.includes( params.slug ))
   
   return (
-    <div>
-      <h2 className='text-3xl font-bold mb-4'>{projects.title}</h2>
-
+    <Suspense fallback={<Loading />}>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
         {filteredList.length > 0 ? filteredList.map(project => (
           <ProjectCard key={project._id} project={project} lang={params.lang} />
@@ -27,8 +27,7 @@ const CategoryPage = async ( { params } : { params: { slug: string, lang: Locale
           </p>
         )}
       </div>
-
-    </div>
+    </Suspense>
   )
 }
 

@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
+import { getDictionary } from '@/lang'
+import { Locale } from '@/i18n.config'
 
 const filters = [
   {
@@ -30,13 +32,15 @@ const filters = [
 ]
 
 
-export default function ProjectsLayout({ 
+export default async function ProjectsLayout({ 
     children ,
     params
 } : { 
     children: ReactNode ,
-    params: { slug: string }
+    params: { slug: string, lang: Locale }
 }) {
+  
+  const { projects } = await getDictionary(params.lang)
     
   return (
     <div className='relative min-h-screen w-full md:w-3/6 md:mx-auto py-10 mt-10 after:absolute after:left-0 after:top-0 after:h-full after:w-[189.6px] after:border-x after:-z-10 before:absolute before:border-stone-200 after:border-stone-200 dark:before:border-stone-900 dark:after:border-stone-800 before:right-0 before:top-0 before:h-full before:w-[189.6px] before:border-x before:-z-10'>
@@ -55,6 +59,7 @@ export default function ProjectsLayout({
         ))}
       </div>
       <div>
+        <h2 className='text-3xl font-bold mb-4'>{projects.title}</h2>
         {children}
       </div>
     </div>
