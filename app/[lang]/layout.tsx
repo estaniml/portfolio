@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import { GeistSans, GeistMono } from 'geist/font'
 import Navbar from '@/components/navbar'
@@ -7,8 +6,6 @@ import Footer from '@/components/footer'
 import { ThemeProvider } from "@/components/theme-provider"
 import { getDictionary } from '@/lib/dictionary'
 import { Locale } from '@/i18n.config'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "Web Developer - Estanislao Martinez Lacabe",

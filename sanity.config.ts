@@ -1,4 +1,5 @@
 'use client'
+
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
