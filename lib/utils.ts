@@ -17,17 +17,19 @@ export function urlFor(source : string | StaticImageData ) {
 
 export async function getData(slug: string | null ) {
 
+  const revalidate = 60
+
   if( slug ) {
     const query = `*[_type == "project" && slug.current == $slug]`;
   
-    const project = await client.fetch(query, { slug });
+    const project = await client.fetch(query, { slug, next: { revalidate } });
   
     return project;
 
   } else {
     const query = `*[_type == "project"]`
 
-    const data = await client.fetch(query)
+    const data = await client.fetch(query, { next: { revalidate }})
     
     return data
   }
