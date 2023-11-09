@@ -3,7 +3,8 @@ import Image from 'next/image'
 import { Project } from '@/lib/interface'
 import { ChevronRight, Mail, FileDown } from 'lucide-react'
 import ProjectCard from '@/components/project-card'
-import { getData } from '@/lib/fetchers'
+import { client } from '@/lib/sanity'
+import groq from 'groq'
 import { Locale } from '@/i18n.config'
 import { getDictionary } from '@/lib/dictionary'
 import me from '@/public/chill.jpg'
@@ -16,7 +17,9 @@ export default async function Home({
 
   const { home } = await getDictionary(params.lang)
 
-  const data = await getData(null) as Project[]
+  const revalidate = 60
+  const query = groq`*[_type == "project"]`
+  const data = await client.fetch(query, { next: { revalidate }})
   
   return (
     <main className="relative min-h-screen w-full md:w-3/6 md:mx-auto px-2 md:px-0 pt-12 mt-12 pb-10 bg-lines">
@@ -70,7 +73,7 @@ export default async function Home({
         <h2 className='text-3xl font-bold mb-4'>{home.recentProjects}</h2>
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-          {data.slice(0,4).map(project => (
+          {data.slice(0,4).map( (project: Project) => (
             <ProjectCard key={project._id} project={project} lang={params.lang} />
           ))}
         </div>
