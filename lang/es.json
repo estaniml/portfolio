@@ -7,9 +7,9 @@
         "footer": "Este portafolio está desarrollado con Next 14, Typescript, Tailwind y Sanity CMS."
     },
     "home": {
-        "subtitle": "Desarrollador web Full Stack.",
+        "subtitle": "Desarrollador web Full Stack de Argentina.",
         "description": 
-        "Soy un desarrollador web Full Stack y estudiante de Lic. dministración con más de 1 año de experiencia. Mis herramientas favoritas en el frontend incluyen Next, Typescript y Tailwind, mientras que en el backend me adapto a diversas tecnologías.",
+        "Soy un desarrollador web Full Stack y estudiante de Lic. en Administración con más de 1 año de experiencia. Mis herramientas favoritas en el Frontend (mi fuerte) incluyen Next, Typescript y Tailwind, mientras que en el backend me adapto a diversas tecnologías.",
         "downloadCV": "Descargar CV",
         "mySkills": "Mis Herramientas",
         "recentProjects": "Proyectos Recientes",

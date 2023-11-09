@@ -33,4 +33,5 @@ export async function getData(slug: string | null ) {
     
     return data
   }
+  
 }

@@ -9,12 +9,12 @@ const Footer = ({ content } : { content: { footer: string }}) => {
 
         <div className='flex items-center gap-4 text-stone-700 dark:text-stone-300'>
             <a target='_blank' rel='noreferrer' href="https://github.com/estaniml/portfolio"className='p-1 rounded-lg hover:bg-stone-200 dark:hover:bg-stone-800 transition-all'>
-            <SquareCode size={18} />
+                <SquareCode size={18} />
             </a>
             <a target='_blank' rel='noreferrer' href="https://github.com/estaniml"className='p-1 rounded-lg hover:bg-stone-200 dark:hover:bg-stone-800 transition-all'>
                 <Github size={18} />
             </a>
-            <a target='_blank' rel='noreferrer' href="https://linkedin.com/estaniml" className='p-1 rounded-lg hover:bg-stone-200 dark:hover:bg-stone-800 transition-all'>
+            <a target='_blank' rel='noreferrer' href="https://www.linkedin.com/in/emartinezlacabe/" className='p-1 rounded-lg hover:bg-stone-200 dark:hover:bg-stone-800 transition-all'>
                 <Linkedin size={18} />
             </a>
             <a target='_blank' rel='noreferrer' href="https://x.com" className='p-1 rounded-lg hover:bg-stone-200 dark:hover:bg-stone-800 transition-all'>
