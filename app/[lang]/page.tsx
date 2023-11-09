@@ -9,6 +9,8 @@ import { Locale } from '@/i18n.config'
 import { getDictionary } from '@/lib/dictionary'
 import me from '@/public/chill.jpg'
 
+export const revalidate = 60;
+
 export default async function Home({
   params
 }: {
@@ -17,9 +19,9 @@ export default async function Home({
 
   const { home } = await getDictionary(params.lang)
 
-  const revalidate = 60
-  const query = groq`*[_type == "project"]`
-  const data = await client.fetch(query, { next: { revalidate }})
+  const query = groq`*[_type == "project"] | order(_createdAt asc)`
+  const data = await client.fetch(query)
+  
   
   return (
     <main className="relative min-h-screen w-full md:w-3/6 md:mx-auto px-2 md:px-0 pt-12 mt-12 pb-10 bg-lines">
@@ -73,7 +75,7 @@ export default async function Home({
         <h2 className='text-3xl font-bold mb-4'>{home.recentProjects}</h2>
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-          {data.slice(0,4).map( (project: Project) => (
+          {data.sort().slice(0,4).map( (project: Project) => (
             <ProjectCard key={project._id} project={project} lang={params.lang} />
           ))}
         </div>
