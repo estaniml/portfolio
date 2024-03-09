@@ -93,7 +93,7 @@ export default async function Home({
 
           <div className='grid grid-cols-1 gap-2 md:gap-0 md:grid-cols-2'>
             <a href='https:/linkedin.com/in/emartinezlacabe' target='_blank' rel='noreferrer' className='flex justify-center items-center gap-2 bg-stone-800 text-white w-[90%] mx-auto rounded-lg border border-stone-900 hover:opacity-90 transition-all shadow font-medium'>
-              <Linkedin sizd={16} />
+              <Linkedin size={16} />
               LinkedIn 
             </a>
             <a href='mailto:emartinezlacabe@gmail.com' target='_blank' rel='noreferrer' className='flex justify-center items-center gap-2 bg-stone-50 text-black w-[90%] mx-auto rounded-lg border border-stone-300 hover:bg-stone-100 transition-all shadow font-medium'>
