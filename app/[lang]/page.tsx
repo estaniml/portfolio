@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Project } from '@/lib/interface'
-import { ChevronRight, Mail, FileDown } from 'lucide-react'
+import { ChevronRight, Mail, FileDown, Linkedin  } from 'lucide-react'
 import ProjectCard from '@/components/project-card'
 import { client } from '@/lib/sanity'
 import groq from 'groq'
@@ -92,9 +92,9 @@ export default async function Home({
           </div>
 
           <div className='grid grid-cols-1 gap-2 md:gap-0 md:grid-cols-2'>
-            <a href='https://wa.me/5493434653960' target='_blank' rel='noreferrer' className='flex justify-center items-center gap-2 bg-stone-800 text-white w-[90%] mx-auto rounded-lg border border-stone-900 hover:opacity-90 transition-all shadow font-medium'>
-              <Image src={'/whatsapp.svg'} alt='' width={22} height={22} />
-              Whatsapp
+            <a href='https:/linkedin.com/emartinezlacabe' target='_blank' rel='noreferrer' className='flex justify-center items-center gap-2 bg-stone-800 text-white w-[90%] mx-auto rounded-lg border border-stone-900 hover:opacity-90 transition-all shadow font-medium'>
+              <Linkedin sizd={16} />
+              LinkedIn 
             </a>
             <a href='mailto:emartinezlacabe@gmail.com' target='_blank' rel='noreferrer' className='flex justify-center items-center gap-2 bg-stone-50 text-black w-[90%] mx-auto rounded-lg border border-stone-300 hover:bg-stone-100 transition-all shadow font-medium'>
               <Mail size={16} />
