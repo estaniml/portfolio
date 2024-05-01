@@ -8,13 +8,13 @@ import { AlertTriangle } from 'lucide-react'
 import { Suspense } from 'react'
 import Loading from './loading'
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 const CategoryPage = async ( { params } : { params: { slug: string, lang: Locale}}) => {
   
   const { projects } = await getDictionary(params.lang)
 
-  const query = groq`*[_type == "project"]| order(_createdAt asc)`
+  const query = groq`*[_type == "project"]| order(_updatedAt asc)`
   const data = await client.fetch(query)
   
   const filteredList = params.slug === 'all' ? data : data.filter( (project: Project) => project.tools.includes( params.slug ))
