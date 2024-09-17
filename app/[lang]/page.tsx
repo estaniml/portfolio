@@ -27,7 +27,8 @@ export default async function Home({ params }: { params: { lang: Locale } }) {
       </p>
       <a
         download="Estanislao Martinez Lacabe CV - Frontend Developer"
-        href="estanislaoMartinezLacabe-cv.pdf"
+        target="_blank"
+        href="https://emlacabe.vercel.app/estanislaoMartinezLacabe-CV.pdf"
         className="mt-4 w-full flex justify-center items-center gap-2 hover:underline transition-all"
       >
         <FileDown size={20} /> {home.downloadCV}
