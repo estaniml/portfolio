@@ -26,7 +26,7 @@ export function middleware(request: NextRequest) {
     )
     
     if(pathname === '/admin') return
-  // Redirect if there is no locale
+  
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request)
     return NextResponse.redirect(

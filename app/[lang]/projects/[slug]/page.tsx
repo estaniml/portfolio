@@ -14,7 +14,7 @@ const CategoryPage = async ( { params } : { params: { slug: string, lang: Locale
   
   const { projects } = await getDictionary(params.lang)
 
-  const query = groq`*[_type == "project"]| order(_updatedAt asc)`
+  const query = groq`*[_type == "project"]| order(_updatedAt desc)`
   const data = await client.fetch(query)
   
   const filteredList = params.slug === 'all' ? data : data.filter( (project: Project) => project.tools.includes( params.slug ))
