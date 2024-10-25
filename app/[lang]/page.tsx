@@ -25,6 +25,7 @@ export default async function Home({ params }: { params: { lang: Locale } }) {
       <p className="mt-8 text-lg font-light dark:text-stone-200">
         {home.description}
       </p>
+      <p className="mt-6 text-lg font-light dark:text-stone-200">{home.workExperience}</p>
       <a
         download="Estanislao Martinez Lacabe CV - Frontend Developer"
         target="_blank"
